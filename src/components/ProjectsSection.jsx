@@ -105,7 +105,7 @@ export const ProjectsSection = () => {
             target="_blank"
             href="https://github.com/shreyareddi"
           >
-            Check My Github <ArrowRight size={16} />
+            look @ my github <ArrowRight size={16} />
           </a>
         </div>
       </div>

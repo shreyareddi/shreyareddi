@@ -13,9 +13,9 @@ import { useToast } from "@/hooks/use-toast";
 import { useRef, useEffect, useState } from "react";
 import emailjs from "@emailjs/browser";
 
-const SERVICE_ID = process.env.REACT_APP_SERVICE_ID;
-const TEMPLATE_ID = process.env.REACT_APP_TEMPLATE_ID;
-const PUBLIC_KEY = process.env.REACT_APP_PUBLIC_KEY;
+const SERVICE_ID = import.meta.env.VITE_SERVICE_ID;
+const TEMPLATE_ID = import.meta.env.VITE_TEMPLATE_ID;
+const PUBLIC_KEY = import.meta.env.VITE_PUBLIC_KEY;
 
 export const ContactSection = () => {
   const { toast } = useToast();
@@ -27,17 +27,18 @@ export const ContactSection = () => {
     setIsSubmitting(true);
 
     setTimeout(() => {
+      emailjs.sendForm(
+        SERVICE_ID,
+        TEMPLATE_ID,
+        e.target,
+        PUBLIC_KEY
+      );
+      setIsSubmitting(false);
+      e.target.reset();
       toast({
         title: "message sent!",
         description: "thanks for your message! i'll get back to you soon ☻",
       });
-      emailjs.sendForm(
-        process.env.REACT_APP_SERVICE_ID,
-        process.env.REACT_APP_TEMPLATE_ID,
-        e.target,
-        process.env.REACT_APP_PUBLIC_KEY
-      );
-      setIsSubmitting(false);
     }, 1500);
   };
   return (
