@@ -12,6 +12,11 @@ import { cn } from "@/lib/utils";
 import { useToast } from "@/hooks/use-toast";
 import { useRef, useEffect, useState } from "react";
 import emailjs from "@emailjs/browser";
+require('dotenv').config();
+
+const SERVICE_ID = process.env.SERVICE_ID;
+const TEMPLATE_ID = process.env.TEMPLATE_ID;
+const PUBLIC_KEY = process.env.PUBLIC_KEY;
 
 export const ContactSection = () => {
   const { toast } = useToast();
