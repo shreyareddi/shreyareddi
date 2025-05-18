@@ -9,13 +9,7 @@ export const HeroSection = () => {
       <div className="container max-w-10xl max-h-10xl mx-auto text-center z-10">
         <div>
           <div
-            className="relative flex flex-col items-center justify-center h-[500px]"
-            style={{
-              backgroundImage: "url('/journal.png')",
-              backgroundSize: "contain",
-              backgroundPosition: "center",
-              backgroundRepeat: "no-repeat",
-            }}
+            className="relative flex flex-col items-center justify-center h-[500px] bg-none md:bg-[url('/journal.png')] md:bg-contain md:bg-center md:bg-no-repeat"
           >
             <h1 className="text-4xl md:text-6xl font-bold tracking-tight whitespace-nowrap opacity-0 animate-fade-in">
               <span>hi, i'm</span>

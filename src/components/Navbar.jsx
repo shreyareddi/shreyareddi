@@ -76,7 +76,7 @@ export const Navbar = () => {
 
 			<div
 				className={cn(
-					"fixed top-0 left-0 w-screen h-screen bg-border/90 backdrop-blur-md z-50 flex flex-col items-center justify-center",
+					"fixed top-0 left-0 w-screen h-screen bg-border/95 z-50 flex flex-col items-center justify-center",
 					"transition-all duration-300 md:hidden",
 					isMenuOpen
 						? "opacity-100 pointer-events-auto"
@@ -91,7 +91,7 @@ export const Navbar = () => {
 							className="text-foreground/80 hover:text-border transition-colors duration-300"
 							onClick={() => setIsMenuOpen(false)}
 						>
-							{item.name}
+							<b>{item.name}</b>
 						</a>
 					))}
 				</div>
