@@ -23,22 +23,24 @@ export const ContactSection = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
     setIsSubmitting(true);
 
-    setTimeout(() => {
-      toast({
-        title: "message sent!",
-        description: "thanks for your message! i'll get back to you soon ☻",
+    emailjs
+      .sendForm(SERVICE_ID, TEMPLATE_ID, e.target, PUBLIC_KEY)
+      .then(() => {
+        toast({
+          title: "message sent!",
+          description: "thanks for your message! i'll get back to you soon ☻",
+        });
+        setIsSubmitting(false);
+      })
+      .catch(() => {
+        toast({
+          title: "error",
+          description: "something went wrong. please try again.",
+        });
+        setIsSubmitting(false);
       });
-      emailjs.sendForm(
-        SERVICE_ID,
-        TEMPLATE_ID,
-        e.target,
-        PUBLIC_KEY
-      );
-      setIsSubmitting(false);
-    }, 1500);
   };
   return (
     <section id="contact" className="py-24 px-4 relative bg-secondary/30">
@@ -98,11 +100,10 @@ export const ContactSection = () => {
 
           <div
             className="bg-card p-8 rounded-lg shadow-xs"
-            onSubmit={handleSubmit}
           >
             <h3 className="text-2xl font-semibold mb-6"> send me a message! </h3>
 
-            <form className="space-y-6">
+            <form className="space-y-6" onSubmit={handleSubmit}>
               <div>
                 <label
                   htmlFor="name"
