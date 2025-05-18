@@ -26,18 +26,16 @@ export const ContactSection = () => {
 
     setIsSubmitting(true);
 
-
     setTimeout(() => {
       toast({
         title: "message sent!",
         description: "thanks for your message! i'll get back to you soon ☻",
       });
-      emailjs
-      .sendForm(
-        process.env.REACT_APP_SERVICE_ID,
-        process.env.REACT_APP_TEMPLATE_ID,
+      emailjs.sendForm(
+        SERVICE_ID,
+        TEMPLATE_ID,
         e.target,
-        process.env.REACT_APP_PUBLIC_KEY
+        PUBLIC_KEY
       );
       setIsSubmitting(false);
     }, 1500);
