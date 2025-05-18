@@ -11,7 +11,7 @@ export const HeroSection = () => {
           <div
             className="relative flex flex-col items-center justify-center h-[500px]"
             style={{
-              backgroundImage: "url('journal.png')",
+              backgroundImage: "url('/journal.png')",
               backgroundSize: "contain",
               backgroundPosition: "center",
               backgroundRepeat: "no-repeat",
