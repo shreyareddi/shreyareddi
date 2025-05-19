@@ -37,7 +37,7 @@ export const AboutSection = () => {
               </a>
 
               <a
-                href="https://docs.google.com/document/d/1YS8Bd9DkkOOXuGVYIbPCDHvDeE_gRpX0EPxCWDRY5hk/edit?usp=sharing"
+                href="https://docs.google.com/document/d/1YS8Bd9DkkOOXuGVYIbPCDHvDeE_gRpX0EPxCWDRY5hk/export?format=pdf&attachment=false"
                 className="px-6 py-2 rounded-full border border-primary text-primary hover:bg-primary/10 transition-colors duration-300"
                 target="_blank"
               >
