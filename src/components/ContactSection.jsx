@@ -55,13 +55,21 @@ export const ContactSection = () => {
         </div>
        
         <div className="bg-white rounded-lg grid grid-cols-1 md:grid-cols-2 gap-12">
-          <div className="space-y-8">
+          <div className="space-y-1">
             <h3 className="text-2xl font-semibold mb-1">
               {" "}
-              Contact Information
+              let's connect!
             </h3>
+            <div className="flex space-x-4 justify-center">
+              <a href="https://www.linkedin.com/in/shreya-reddi/" target="_blank">
+                <Linkedin />
+              </a>
+              <a href="mailto:shrsaired@gmail.com" target="_blank">
+                <Mail />
+              </a>
+            </div>
 
-            <div className="space-y-6 justify-center">
+            <div className="space-y-1 justify-center">
                <div className="flex justify-center items-start space-x-4">
                 <img
                   src="/me.png"
@@ -142,17 +150,6 @@ export const ContactSection = () => {
                 <Send size={16} />
               </button>
             </form>
-          </div>
-        </div>
-        <div className="pt-8 justify-center">
-          <h4 className="font-medium mb-4"> Connect With Me</h4>
-          <div className="flex space-x-4 justify-center">
-            <a href="https://www.linkedin.com/in/shreya-reddi/" target="_blank">
-              <Linkedin />
-            </a>
-            <a href="mailto:shrsaired@gmail.com" target="_blank">
-              <Mail />
-            </a>
           </div>
         </div>
       </div>
