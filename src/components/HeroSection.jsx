@@ -9,7 +9,7 @@ export const HeroSection = () => {
       <div className="container max-w-10xl max-h-10xl mx-auto text-center z-10">
         <div>
           <div
-            className="relative flex flex-col items-center justify-center h-[500px] bg-none md:bg-[url('/journal.png')] md:bg-contain md:bg-center md:bg-no-repeat"
+            className="relative flex flex-col items-center justify-center h-[500px] bg-none md:bg-[url('/frame1.svg')] md:bg-contain md:bg-center md:bg-no-repeat"
           >
             <h1 className="text-4xl md:text-6xl font-bold tracking-tight whitespace-nowrap opacity-0 animate-fade-in">
               <span>hi, i'm</span>
@@ -20,7 +20,7 @@ export const HeroSection = () => {
             <div className="text-lg md:text-xl text-muted-foreground mx-auto mt-4 opacity-0 animate-fade-in-delay-2">
               <b>software dev + designer</b>
               <br />
-              i build products that are functional and creative.
+              i build products that are functional + creative.
             </div>
           </div>
           <div className="pt-4 flex flex-col items-center gap-2 opacity-0 animate-fade-in-delay-3">

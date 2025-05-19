@@ -56,43 +56,17 @@ export const ContactSection = () => {
        
         <div className="bg-white rounded-lg grid grid-cols-1 md:grid-cols-2 gap-12">
           <div className="space-y-8">
-            <h3 className="text-2xl font-semibold mb-6">
+            <h3 className="text-2xl font-semibold mb-1">
               {" "}
               Contact Information
             </h3>
 
             <div className="space-y-6 justify-center">
-              <div className="flex items-start space-x-4">
-                <div className="p-3 rounded-full bg-primary/10">
-                  <Mail className="h-6 w-6 text-primary" />{" "}
-                </div>
-                <div>
-                  <a
-                    href="mailto:shrsaired@gmail.com"
-                    className="text-muted-foreground hover:text-primary transition-colors"
-                  >
-                    shrsaired@gmail.com
-                  </a>
-                </div>
-              </div>
-              <div className="flex items-start space-x-4">
-                <div className="p-3 rounded-full bg-primary/10">
-                  <MapPin className="h-6 w-6 text-primary" />{" "}
-                </div>
-                <div>
-                  <a className="text-muted-foreground hover:text-primary transition-colors">
-                    Los Angeles, CA
-                  </a>
-                </div>
-              </div>
-            </div>
-
-            <div className="pt-8">
-              <h4 className="font-medium mb-4"> Connect With Me</h4>
-              <div className="flex space-x-4 justify-center">
-                <a href="https://www.linkedin.com/in/shreya-reddi/" target="_blank">
-                  <Linkedin />
-                </a>
+               <div className="flex justify-center items-start space-x-4">
+                <img
+                  src="/me.png"
+                  className="w-115 h-115 object-contain"
+                />
               </div>
             </div>
           </div>
@@ -168,6 +142,17 @@ export const ContactSection = () => {
                 <Send size={16} />
               </button>
             </form>
+          </div>
+        </div>
+        <div className="pt-8 justify-center">
+          <h4 className="font-medium mb-4"> Connect With Me</h4>
+          <div className="flex space-x-4 justify-center">
+            <a href="https://www.linkedin.com/in/shreya-reddi/" target="_blank">
+              <Linkedin />
+            </a>
+            <a href="mailto:shrsaired@gmail.com" target="_blank">
+              <Mail />
+            </a>
           </div>
         </div>
       </div>
