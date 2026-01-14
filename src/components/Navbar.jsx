@@ -5,7 +5,6 @@ import { useEffect, useState } from "react";
 const navItems = [
 	{ name: "HOME", href: "#hero" },
 	{ name: "ABOUT ME", href: "#about" },
-	{ name: "SKILLS", href: "#skills" },
 	{ name: "PROJECTS", href: "#projects" },
 	{ name: "CONTACT", href: "#contact" },
 ];
