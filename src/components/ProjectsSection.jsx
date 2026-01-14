@@ -1,38 +1,30 @@
 import { ArrowRight, ExternalLink, Github } from "lucide-react";
 
 const projects = [
-  // {
-  //   id: 1,
-  //   title: "SaaS Landing Page",
-  //   description: "A beautiful landing page app using React and Tailwind.",
-  //   image: "/projects/project1.png",
-  //   tags: ["React", "TailwindCSS", "Supabase"],
-  //   demoUrl: "#",
-  //   githubUrl: "#",
-  // },
-  // {
-  //   id: 2,
-  //   title: "Orbit Analytics Dashboard",
-  //   description:
-  //     "Interactive analytics dashboard with data visualization and filtering capabilities.",
-  //   image: "/projects/project2.png",
-  //   tags: ["TypeScript", "D3.js", "Next.js"],
-  //   demoUrl: "#",
-  //   githubUrl: "#",
-  // },
-  // {
-  //   id: 3,
-  //   title: "E-commerce Platform",
-  //   description:
-  //     "Full-featured e-commerce platform with user authentication and payment processing.",
-  //   image: "/projects/project3.png",
-  //   tags: ["React", "Node.js", "Stripe"],
-  //   demoUrl: "#",
-  //   githubUrl: "#",
-  // },
+  {
+    id: 1,
+    title: "5C Matchmaking",
+    description: "Matchmaking app for students of the Claremont Colleges, connecting students to friends and romantic matches",
+    image: "/projects/5cmatchmaking.mov",
+    tags: ["React", "Express.js", "PostgreSQL", "Socket.io"],
+    demoUrl: "https://drive.google.com/file/d/1MAO9-WBPuyF23J87erLO4ZlgbhuOvVpE/view?usp=sharing",
+  },
+  {
+    id: 2,
+    title: "Who's That Pokemon?",
+    description:
+      "Guessing game where users identify Pokemon based on silhouetted images",
+    image: "/projects/pokemon.png",
+    tags: ["JavaScript", "HTML/CSS"],
+    demoUrl: "https://shreyareddi.github.io/whos-that-pokemon/"
+  },
 ];
 
 export const ProjectsSection = () => {
+  const isVideo = (url) => {
+    return /\.(mp4|mov|webm|ogg)$/i.test(url);
+  };
+
   return (
     <section id="projects" className="py-24 px-4 relative">
       <div className="container mx-auto max-w-5xl">
@@ -48,21 +40,38 @@ export const ProjectsSection = () => {
         </div>
         
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="flex flex-col gap-8">
           {projects.map((project, key) => (
             <div
               key={key}
-              className="group bg-card rounded-lg overflow-hidden shadow-xs card-hover"
+              className="group bg-card rounded-lg overflow-hidden shadow-xs card-hover flex flex-col md:flex-row"
             >
-              <div className="h-48 overflow-hidden">
-                <img
-                  src={project.image}
-                  alt={project.title}
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                />
+              <div className="md:w-2/5 h-64 md:h-auto overflow-hidden flex-shrink-0">
+                {isVideo(project.image) ? (
+                  <video
+                    src={project.image}
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                  />
+                ) : (
+                  <img
+                    src={project.image}
+                    alt={project.title}
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                  />
+                )}
               </div>
 
-              <div className="p-6">
+              <div className="p-6 flex flex-col justify-center md:w-3/5">
+                <h3 className="text-2xl font-semibold mb-2">{project.title}</h3>
+                
+                <p className="text-muted-foreground mb-4">
+                  {project.description}
+                </p>
+
                 <div className="flex flex-wrap gap-2 mb-4">
                   {project.tags.map((tag) => (
                     <span className="px-2 py-1 text-xs font-medium border rounded-full bg-secondary text-secondary-foreground">
@@ -71,27 +80,14 @@ export const ProjectsSection = () => {
                   ))}
                 </div>
 
-                <h3 className="text-xl font-semibold mb-1"> {project.title}</h3>
-                <p className="text-muted-foreground text-sm mb-4">
-                  {project.description}
-                </p>
-                <div className="flex justify-between items-center">
-                  <div className="flex space-x-3">
-                    <a
-                      href={project.demoUrl}
-                      target="_blank"
-                      className="text-foreground/80 hover:text-primary transition-colors duration-300"
-                    >
-                      <ExternalLink size={20} />
-                    </a>
-                    <a
-                      href={project.githubUrl}
-                      target="_blank"
-                      className="text-foreground/80 hover:text-primary transition-colors duration-300"
-                    >
-                      <Github size={20} />
-                    </a>
-                  </div>
+                <div className="flex space-x-3">
+                  <a
+                    href={project.demoUrl}
+                    target="_blank"
+                    className="text-foreground/80 hover:text-primary transition-colors duration-300"
+                  >
+                    <ExternalLink size={20} />
+                  </a>
                 </div>
               </div>
             </div>
